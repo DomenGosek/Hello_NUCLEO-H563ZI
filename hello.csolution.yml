@@ -1,0 +1,27 @@
+solution:
+  description: Simple Hello World example for NUCLEO-H563ZI
+  created-for: CMSIS-Toolbox@2.0.0
+  compiler: AC6
+
+  packs:
+    - pack: ARM::CMSIS@5.9.0
+    - pack: ARM::CMSIS-Compiler@1.0.0
+    - pack: Keil::STM32H5xx_DFP@1.0.0
+
+  target-types:
+    - type: NUCLEO-H563ZI
+      device: STM32H563ZITx
+      processor:
+        trustzone: off
+
+  build-types:
+    - type: Debug
+      debug: on
+      optimize: none
+
+    - type: Release
+      debug: off
+      optimize: balanced
+
+  projects:
+    - project: ./hello.cproject.yml
